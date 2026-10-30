@@ -11,7 +11,7 @@ const deck = new Reveal({
   width: 1600, height: 900, margin: 0, minScale: 0.15, maxScale: 2,
   hash: true, history: true, center: false, controls: true,
   controlsLayout: 'edges', controlsBackArrows: 'visible', progress: true,
-  transition: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'none' : 'fade',
+  transition: matchMedia('(prefers-reduced-motion: reduce)').matches || new URLSearchParams(location.search).get('transition') === 'none' ? 'none' : 'fade',
   transitionSpeed: 'fast', backgroundTransition: 'none',
   navigationMode: 'linear', slideNumber: false, showSlideNumber: 'print',
   pdfMaxPagesPerSlide: 1, pdfSeparateFragments: false,
@@ -27,7 +27,14 @@ const updateChrome = () => {
 deck.on('slidechanged', updateChrome);
 updateChrome();
 document.querySelector('#overview').addEventListener('click', () => deck.toggleOverview());
-document.querySelector('#notes').addEventListener('click', () => deck.getPlugin('notes').open());
+document.querySelector('#notes').addEventListener('click', () => {
+  const dialog = document.querySelector('#slide-notes');
+  const current = deck.getCurrentSlide();
+  dialog.querySelector('.note-title').textContent = current.querySelector('h1, h2').textContent;
+  dialog.querySelector('.note-copy').textContent = current.querySelector('.notes')?.textContent || 'No notes for this slide.';
+  deck.configure({ keyboard: false });
+  dialog.showModal();
+});
 document.querySelector('#fullscreen').addEventListener('click', async () => {
   try {
     if (document.fullscreenElement) await document.exitFullscreen();

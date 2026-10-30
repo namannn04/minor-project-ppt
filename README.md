@@ -18,6 +18,7 @@ Open the Local URL printed by Vite, normally http://127.0.0.1:4173.
 - **Left / Right / Space:** move between slides.
 - **O / Esc:** overview and jump to a slide.
 - **S:** presenter notes, next-slide preview, and timer. Allow the popup if your browser asks.
+- The **Notes** button shows the current slide's notes directly in the page, including browsers that restrict popups.
 - **F:** fullscreen. The **Present** button also toggles fullscreen.
 - **B:** pause on a black screen.
 - Click a product screenshot to inspect it at full size. Press **Esc** to close.

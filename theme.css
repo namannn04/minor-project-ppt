@@ -18,3 +18,10 @@ dialog{background:#1c1e18;border:1px solid #4a4e40;border-radius:12px;color:var(
 .print-mode .deck-chrome,.print-mode .deck-footer,.print-mode .presentation-tools{display:none!important}.print-pdf .reveal .slides section{padding:80px 100px!important}.print-pdf .reveal .slides section .bottom-note{bottom:55px}.print-pdf .reveal .slides section.cover{display:grid!important}.print-pdf .reveal a{color:var(--lime)}
 @media print{.deck-chrome,.deck-footer,.presentation-tools,dialog{display:none!important}body{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
 .cover-mark .rx-x{display:inline;font:inherit;letter-spacing:inherit;color:var(--pink);margin:0}
+/* Core Reveal.js styles are intentionally theme-neutral. */
+.reveal-viewport{background:var(--black);color:var(--paper)}
+.reveal{color:var(--paper)}
+.reveal h1,.reveal h2,.reveal h3,.reveal h4{color:var(--paper)}
+.reveal .pink,.reveal .risk-list .number{color:var(--pink)}
+.reveal .lime{color:var(--lime)}
+#slide-notes .note-copy{font-size:17px;line-height:1.65;color:#d2d4cc}
