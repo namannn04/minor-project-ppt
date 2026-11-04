@@ -1,6 +1,6 @@
 # Presora · Project Progress Presentation
 
-A 23-slide Reveal.js presentation for the Presora minor project at Maharaja Surajmal Institute of Technology. The visual theme combines Jet Black (`#111111`), Hot Pink (`#ff409a`), and Chartreuse (`#c6ff00`) with clinical paper surfaces and Presora’s original shield logo. Layouts include a product-led cover, consultation and architecture diagrams, large application screens, and concise evaluation charts.
+A 12-slide Reveal.js presentation for the Presora minor project at Maharaja Surajmal Institute of Technology. The visual theme combines Jet Black (`#111111`), Hot Pink (`#ff409a`), and Chartreuse (`#c6ff00`) with clinical paper surfaces and Presora’s original shield logo. Layouts include a product-led cover, consultation and architecture diagrams, large application screens, and concise evaluation charts.
 
 ## Run locally
 
@@ -46,7 +46,10 @@ Content follows the Presora progress report: [Google Doc](https://docs.google.co
 - The rule-engine screenshot uses a synthetic allergy scenario with actual engine output.
 - The AI screenshot uses a synthetic example generated through the existing guidance service with an available model override. It does not establish clinical accuracy or restore the unavailable configured model in the normal application.
 - The latest supplied evaluation reports 182 automated tests passed: 102 frontend and 80 backend. These are reported results, not a new test run.
-- Four evaluation slides summarize the supplied testing PDF: automated suites; 10 DDI scenarios and 15 rule scenarios; local fixture latency; and architectural comparison.
+- Two evaluation slides summarize automated suites and scenarios, then local fixture latency with its limits.
+- A dedicated technology slide explains the roles of Next.js/React, FastAPI, PostgreSQL, Keycloak, Groq and DDInter/rules.
+- A positioning slide compares documented scope for Drugs.com, DrugBank and DDInter with Presora’s combined workflow. It makes no unsupported claim that competing products lack overlapping features or that Presora is clinically superior.
+- All six product captures and the original nine references are retained; two official competitor sources are added. Team enrollment details remain in cover-slide speaker notes.
 - All 75 rule-category decisions matched fixture expectations. This does not establish clinical accuracy. Ten integrated scenarios were generated but not executed end to end.
 - Timing bars show single-run mean function latency from an in-memory fixture, excluding database, network, and API overhead. P95 values remain in speaker notes.
 - The comparison describes architectural differences, not an executed head-to-head clinical benchmark.
