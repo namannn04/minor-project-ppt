@@ -51,7 +51,7 @@ Content follows the Presora progress report: [Google Doc](https://docs.google.co
 - A dedicated technology slide explains the roles of Next.js/React, FastAPI, PostgreSQL, Keycloak, Groq and DDInter/rules.
 - The 13-slide order follows the user-supplied final presentation content guide: title; problem; existing approaches/research gap; objectives; architecture; medicine identification/DDI; rules; hybrid AI; doctor application; patient application; stack; evaluation; innovation/future/conclusion.
 - Research-gap context retains links to Drugs.com, DrugBank and DDInter without claiming experimentally proven superiority.
-- Six original product captures are placed eleven times where the content guide requests module and application evidence. The Sources button opens the original references, competitor references and clinical-rule provenance. Team enrollment details remain in cover-slide notes.
+- Six original product captures are placed ten times where the content guide requests module and application evidence. The Sources button opens the original references, competitor references and clinical-rule provenance. Team enrollment details remain in cover-slide notes.
 - Presenter notes retain the guide’s presentation priorities, demonstration sequence and cautions.
 - Intended behavior is labelled where current source differs: full structured results are not yet passed into guidance, and explicit incomplete-state propagation remains pending. ABDM/ABHA is future scope only.
 - All 75 rule-category decisions matched fixture expectations. This does not establish clinical accuracy. Ten integrated scenarios were generated but not executed end to end.
