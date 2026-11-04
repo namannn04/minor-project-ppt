@@ -67,3 +67,9 @@ body[data-surface='split'] .deck-position,body[data-surface='split'] .presentati
 /* Softer closing surfaces for sustained reading during a presentation. */
 .guide-testing{background:#eef1ed}.guide-testing .guide-test-metrics strong{color:var(--clinical)}
 .guide-conclusion{--ink:#f4f5ed;--muted:#b6c1b5;--line:#465248;background:#1b2520}.guide-conclusion .eyebrow{color:#cad8b3!important}.guide-conclusion-grid h3{border-color:var(--line)}.guide-conclusion-grid li{border-color:var(--line)}.guide-conclusion-grid small{color:var(--muted)}.guide-conclusion .guide-final-line{border-color:var(--line)}.guide-conclusion .guide-final-line strong{color:#cad8b3}
+
+/* Database provenance beside the modules that use it. */
+.guide-ddi .ddi-evidence img{height:205px}.guide-ddi .footnote{font-size:17px!important;line-height:1.5!important}.guide-ddi .footnote strong,.guide-ddi .footnote a{color:var(--clinical)}
+.guide-rules .rule-factor-list li{font-size:22px;padding:7px 0}.rule-factor-list small{display:block;font-size:15px;line-height:1.35;margin-top:4px;color:var(--muted)}.guide-rules .rule-principle{font-size:19px!important;line-height:1.35!important;margin-top:13px!important}.guide-rules .guide-example-result{align-items:start;margin-top:17px!important;padding-top:14px}.guide-rules .guide-example-result b{font-size:24px;color:var(--clinical);max-width:310px}.guide-rules .guide-example-result span{font-size:19px;max-width:470px}.guide-rules .rule-data-note{font-size:16px!important;line-height:1.35!important;margin-top:12px!important}.source-list p{font-size:13px;color:var(--muted);line-height:1.45;margin:8px 0 0}
+
+.guide-rules .guide-rule-layout img{height:310px}.guide-rules .rule-factor-list li{padding:6px 0}.guide-rules .guide-rule-layout>div>p:first-of-type{font-size:21px;line-height:1.35}
