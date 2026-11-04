@@ -7,4 +7,4 @@ const missing = images.filter(file => !existsSync(new URL(`../assets/${file}`, i
 if (count !== 13 || notes !== count || images.length !== 11 || missing.length) {
   throw new Error(JSON.stringify({ count, notes, images: images.length, missing }));
 }
-console.log(`Deck structure verified: ${count} slides, ${notes} speaker notes, ${images.length} local product screenshots.`);
+console.log(`Deck structure verified: ${count} slides, ${notes} speaker notes, ${images.length} screenshot placements from ${new Set(images).size} local captures.`);

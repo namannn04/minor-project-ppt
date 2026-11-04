@@ -1,6 +1,6 @@
 # Presora · Project Progress Presentation
 
-A 12-slide Reveal.js presentation for the Presora minor project at Maharaja Surajmal Institute of Technology. The visual theme combines Jet Black (`#111111`), Hot Pink (`#ff409a`), and Chartreuse (`#c6ff00`) with clinical paper surfaces and Presora’s original shield logo. Layouts include a product-led cover, consultation and architecture diagrams, large application screens, and concise evaluation charts.
+A 13-slide Reveal.js presentation for the Presora minor project at Maharaja Surajmal Institute of Technology. The visual theme combines Jet Black (`#111111`), Hot Pink (`#ff409a`), and Chartreuse (`#c6ff00`) with clinical paper surfaces and Presora’s original shield logo. Layouts include a product-led cover, consultation and architecture diagrams, application screenshot strips, and a concise evaluation table.
 
 ## Run locally
 
@@ -22,6 +22,7 @@ Open the Local URL printed by Vite, normally http://127.0.0.1:4173.
 - **F:** fullscreen. The **Present** button also toggles fullscreen.
 - **B:** pause on a black screen.
 - Click a product screenshot to inspect it at full size. Press **Esc** to close.
+- **Sources:** open the project bibliography without adding an extra slide.
 - The **?** button lists controls.
 
 ## Export to PDF
@@ -46,12 +47,15 @@ Content follows the Presora progress report: [Google Doc](https://docs.google.co
 - The rule-engine screenshot uses a synthetic allergy scenario with actual engine output.
 - The AI screenshot uses a synthetic example generated through the existing guidance service with an available model override. It does not establish clinical accuracy or restore the unavailable configured model in the normal application.
 - The latest supplied evaluation reports 182 automated tests passed: 102 frontend and 80 backend. These are reported results, not a new test run.
-- Two evaluation slides summarize automated suites and scenarios, then local fixture latency with its limits.
+- Slide 12 combines automated suites, fixture scenarios, clinical-evaluation limitations and the mean/P95 latency table.
 - A dedicated technology slide explains the roles of Next.js/React, FastAPI, PostgreSQL, Keycloak, Groq and DDInter/rules.
-- A positioning slide compares documented scope for Drugs.com, DrugBank and DDInter with Presora’s combined workflow. It makes no unsupported claim that competing products lack overlapping features or that Presora is clinically superior.
-- All six product captures and the original nine references are retained; two official competitor sources are added. Team enrollment details remain in cover-slide speaker notes.
+- The 13-slide order follows the user-supplied final presentation content guide: title; problem; existing approaches/research gap; objectives; architecture; medicine identification/DDI; rules; hybrid AI; doctor application; patient application; stack; evaluation; innovation/future/conclusion.
+- Research-gap context retains links to Drugs.com, DrugBank and DDInter without claiming experimentally proven superiority.
+- Six original product captures are placed eleven times where the content guide requests module and application evidence. The Sources button opens all nine original references plus two official competitor references. Team enrollment details remain in cover-slide notes.
+- Presenter notes retain the guide’s presentation priorities, demonstration sequence and cautions.
+- Intended behavior is labelled where current source differs: full structured results are not yet passed into guidance, and explicit incomplete-state propagation remains pending. ABDM/ABHA is future scope only.
 - All 75 rule-category decisions matched fixture expectations. This does not establish clinical accuracy. Ten integrated scenarios were generated but not executed end to end.
-- Timing bars show single-run mean function latency from an in-memory fixture, excluding database, network, and API overhead. P95 values remain in speaker notes.
+- The latency table shows single-run mean and P95 function timings from an in-memory fixture, excluding database, network and API overhead.
 - The comparison describes architectural differences, not an executed head-to-head clinical benchmark.
 - Speaker notes contain evidence context and current implementation limitations.
 - Bibliography entries retain the source report's references in condensed form.
