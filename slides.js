@@ -83,10 +83,36 @@ export const slides = `
   <div class="split status-columns"><div><h3>Implemented</h3><ul><li>Role-based platform and prescription entry</li><li>Brand mapping and interaction lookup</li><li>Patient-specific rule modules</li><li>Patient portal and guidance service</li></ul></div><div class="remaining"><h3>Still to complete</h3><ul><li>Reliable guidance model configuration</li><li>Safety findings in explanation inputs</li><li>Clear handling of unavailable checks</li><li>Labelled end-to-end evaluation</li></ul></div></div>
   ${note('This progress summary distinguishes implemented code from fully validated integration. The synthetic guidance demonstration does not resolve the unavailable configured model in the normal application flow. No persistent fixes were made while preparing screenshots.')}
 </section>
-<section data-chapter="SOFTWARE VERIFICATION" aria-label="Automated software verification results">
-  <p class="eyebrow">VERIFICATION / 28 OCTOBER 2026</p><h2>179 existing tests passed</h2>
-  <div class="test-layout"><div><div class="test-total">179</div><p class="test-subtitle">Automated software tests</p><div class="test-split"><div><strong>102</strong><span>Frontend · 8 test files</span></div><div><strong>77</strong><span>Backend</span></div></div></div><div class="test-coverage"><h3>What the suites cover</h3><p>Condition resolution, rule aggregation, severity handling, and deduplication.</p><p>Interaction pairing, medicine utilities, encryption, and selected API behavior.</p><p class="small lime">Software verification does not establish clinical effectiveness.</p></div></div>
-  ${note('Recorded commands: pnpm test completed with 102 tests in 8 test files passing; pnpm test:backend completed with 77 tests passing on 28 October 2026. These are existing automated tests with a mixture of isolated and mocked scenarios. They are not 179 labelled clinical prescriptions, and no accuracy, precision, recall, or F1 score was measured.')}
+<section class="testing-overview" data-chapter="SOFTWARE VERIFICATION" aria-label="182 automated tests passed">
+  <p class="eyebrow">TESTING / AUTOMATED SUITES</p><h2>182 automated tests passed</h2>
+  <div class="test-layout"><div><div class="test-total">182</div><p class="test-subtitle">Software tests · all passed</p><div class="test-split"><div><strong>102</strong><span>Frontend</span></div><div><strong>80</strong><span>Backend</span></div></div></div><div class="test-coverage"><h3>Defined behavior, verified</h3><p>Frontend and backend components matched their test specifications.</p><p>10 interaction scenarios · 33 eligible pair occurrences</p><p>15 patient-rule scenarios · 75 category decisions</p></div></div>
+  <p class="bottom-note">Reported evaluation results, not a new test run. Synthetic tests do not establish clinical accuracy.</p>
+  ${note('Source: Presora_Testing_and_Comparative_Evaluation.pdf, Sections 6.1 and 6.2. Latest reported count is 102 frontend + 80 backend = 182, superseding the historical 179-test run. All tests passed. Ten integrated scenarios were generated but not executed end-to-end.')}
+</section>
+<section class="scenario-results" data-chapter="SCENARIO EVALUATION" aria-label="Synthetic prescription scenario results">
+  <p class="eyebrow">TESTING / SYNTHETIC SCENARIOS</p><h2>75 rule decisions matched expectations</h2>
+  <div class="scenario-summary"><div><strong>10</strong><h3>Interaction scenarios</h3><p>33 eligible pair occurrences processed with a local knowledge-base fixture.</p></div><div><strong>15</strong><h3>Patient-rule scenarios</h3><p>75 category decisions matched predefined fixture outcomes.</p></div></div>
+  <div class="decision-strip" aria-label="12 true positives and 63 true negatives; zero false positives or false negatives"><span class="decision-positive">12 TP</span><span class="decision-negative">63 TN</span></div>
+  <p class="decision-caption">0 FP · 0 FN · agreement with fixture expectations only</p>
+  <p class="bottom-note">No independent clinical labels. 10 integrated scenarios were generated; end-to-end execution remains pending.</p>
+  ${note('Source: supplied testing evaluation, Section 6.2. TP 12, TN 63, FP 0, FN 0, total 75. These are predefined test-fixture expectations, not independent clinical predictions; do not interpret as clinical sensitivity, specificity or accuracy. DDI scenarios used a local fixture. Integrated scenarios were generated only.')}
+</section>
+<section class="latency-slide" data-chapter="PROCESSING LATENCY" aria-label="Preliminary local function latency">
+  <p class="eyebrow">TESTING / LOCAL FUNCTION TIMING</p><h2>Preliminary processing latency</h2>
+  <div class="latency-chart" role="img" aria-label="Mean latency in milliseconds: known pair 0.345, unresolved pair 0.307, unmapped medicine 0.019, mixed medicines 0.291">
+    <div class="latency-row"><span>Known pair</span><div><i style="--bar:86.25%"></i></div><strong>0.345</strong></div>
+    <div class="latency-row"><span>Unresolved pair</span><div><i style="--bar:76.75%"></i></div><strong>0.307</strong></div>
+    <div class="latency-row"><span>Unmapped medicine</span><div><i style="--bar:4.75%"></i></div><strong>0.019</strong></div>
+    <div class="latency-row"><span>Mixed medicines</span><div><i style="--bar:72.75%"></i></div><strong>0.291</strong></div>
+  </div><p class="chart-unit">Mean latency / milliseconds</p>
+  <p class="bottom-note">Single run · in-memory fixture · excludes database, network and API overhead. Not production response time.</p>
+  ${note('Source: supplied evaluation, Section 6.3. Means / p95 in milliseconds: known pair .345 / .366; unresolved pair .307 / .446; unmapped medicine .019 / .022; mixed mapped and unmapped .291 / .308. Single local run with an in-memory fixture; not a production benchmark.')}
+</section>
+<section class="comparison-slide" data-chapter="ARCHITECTURAL COMPARISON" aria-label="Comparison of validation approaches">
+  <p class="eyebrow">COMPARISON / ARCHITECTURE</p><h2>Presora combines structured checks<br/>with natural-language guidance</h2>
+  <table class="comparison-table"><thead><tr><th>Capability</th><th>Database + rules</th><th>Direct LLM</th><th>Presora</th></tr></thead><tbody><tr><th>Validation</th><td>Curated records and explicit rules</td><td>Model reasoning</td><td>DDInter + patient rules</td></tr><tr><th>Medicine identity</th><td>Database dependent</td><td>May infer identity</td><td>Dedicated brand mapping</td></tr><tr><th>Explanations</th><td>Usually predefined</td><td>Natural language</td><td>LLM-assisted education</td></tr><tr><th>Unknown pairs</th><td>May return no match</td><td>May be uncertain</td><td>Explicit unresolved state</td></tr></tbody></table>
+  <p class="bottom-note">Architectural comparison only; no head-to-head clinical benchmark was performed.</p>
+  ${note('Source: supplied testing evaluation Section 6.4. Condensed to four main criteria. This is an architectural comparison of approaches, not experimental evidence of superiority. Existing integration limits, optional AI condition mapping and incomplete failure handling still apply.')}
 </section>
 <section data-chapter="CURRENT LIMITATIONS" aria-label="Current implementation boundaries">
   <p class="eyebrow">CURRENT LIMITATIONS</p><h2>What the evidence supports</h2>
@@ -97,7 +123,7 @@ export const slides = `
 <section data-chapter="NEXT STEPS" aria-label="Evaluation plan and next steps">
   <p class="eyebrow">NEXT STEPS</p><h2 class="section-title">A structured path to evaluation</h2>
   <ul class="next-steps"><li><span class="num">01</span><h3>Complete integration</h3><p>Restore guidance availability and supply validated findings to explanations.</p></li><li><span class="num">02</span><h3>Build labelled scenarios</h3><p>Cover valid prescriptions, known risks, missing data, and unsupported medicines.</p></li><li><span class="num">03</span><h3>Measure performance</h3><p>Record expected and observed results, then calculate applicable metrics.</p></li><li><span class="num">04</span><h3>Review clinical behavior</h3><p>Assess permissions, complete workflows, and expert review of safety outputs.</p></li></ul>
-  ${note('Accuracy, precision, recall, F1 score, and processing time are proposed evaluation measures, not current project results. Clinical validation is future work. A comparison of deterministic, AI-only, and hybrid approaches would require a documented experimental design.')}
+  ${note('Fixture-level processing latency has now been reported. Independent clinical metrics, database-backed end-to-end testing and executed comparative experiments remain future work.')}
 </section>
 <section class="references-slide" data-chapter="REFERENCES / 1 OF 2" aria-label="References one to five">
   <p class="eyebrow">REFERENCES / 01</p><h2>Medication safety and knowledge sources</h2>
