@@ -4,7 +4,7 @@ import 'reveal.js/reveal.css';
 import '@fontsource-variable/space-grotesk';
 import '@fontsource-variable/inter';
 import './theme.css';
-import { slides } from './slides.js';
+import { slides, sources } from './slides.js';
 
 document.querySelector('#slides').innerHTML = slides;
 if (new URLSearchParams(location.search).get('transition') === 'none') document.body.classList.add('no-motion');
@@ -29,6 +29,11 @@ const updateChrome = () => {
 };
 deck.on('slidechanged', updateChrome);
 updateChrome();
+document.querySelector('#source-viewer .source-content').innerHTML = sources;
+document.querySelector('#sources').addEventListener('click', () => {
+  deck.configure({ keyboard: false });
+  document.querySelector('#source-viewer').showModal();
+});
 document.querySelector('#overview').addEventListener('click', () => deck.toggleOverview());
 document.querySelector('#notes').addEventListener('click', () => {
   const dialog = document.querySelector('#slide-notes');
