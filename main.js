@@ -7,6 +7,7 @@ import './theme.css';
 import { slides } from './slides.js';
 
 document.querySelector('#slides').innerHTML = slides;
+if (new URLSearchParams(location.search).get('transition') === 'none') document.body.classList.add('no-motion');
 const deck = new Reveal({
   width: 1600, height: 900, margin: 0, minScale: 0.15, maxScale: 2,
   hash: true, history: true, center: false, controls: true,
@@ -32,7 +33,7 @@ document.querySelector('#overview').addEventListener('click', () => deck.toggleO
 document.querySelector('#notes').addEventListener('click', () => {
   const dialog = document.querySelector('#slide-notes');
   const current = deck.getCurrentSlide();
-  dialog.querySelector('.note-title').textContent = current.querySelector('h1, h2').textContent;
+  dialog.querySelector('.note-title').textContent = current.querySelector('h1, h2').innerText.replace(/\s+/g, ' ').trim();
   dialog.querySelector('.note-copy').textContent = current.querySelector('.notes')?.textContent || 'No notes for this slide.';
   deck.configure({ keyboard: false });
   dialog.showModal();

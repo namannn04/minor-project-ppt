@@ -1,6 +1,6 @@
 # Presora · Project Progress Presentation
 
-A 20-slide Reveal.js presentation for the Presora minor project at Maharaja Surajmal Institute of Technology. The visual theme uses Jet Black (`#111111`), Hot Pink (`#ff409a`), and Chartreuse (`#c6ff00`).
+A 23-slide Reveal.js presentation for the Presora minor project at Maharaja Surajmal Institute of Technology. The visual theme combines Jet Black (`#111111`), Hot Pink (`#ff409a`), and Chartreuse (`#c6ff00`) with clinical paper surfaces and Presora’s original shield logo. Layouts include a product-led cover, consultation and architecture diagrams, large application screens, and concise evaluation charts.
 
 ## Run locally
 
@@ -45,7 +45,11 @@ Content follows the Presora progress report: [Google Doc](https://docs.google.co
 - Six product screenshots come from the report's actual application walkthrough and module demonstrations.
 - The rule-engine screenshot uses a synthetic allergy scenario with actual engine output.
 - The AI screenshot uses a synthetic example generated through the existing guidance service with an available model override. It does not establish clinical accuracy or restore the unavailable configured model in the normal application.
-- The 102 frontend and 77 backend test counts are the recorded results from 28 October 2026, not a new test run or a clinical benchmark.
+- The latest supplied evaluation reports 182 automated tests passed: 102 frontend and 80 backend. These are reported results, not a new test run.
+- Four evaluation slides summarize the supplied testing PDF: automated suites; 10 DDI scenarios and 15 rule scenarios; local fixture latency; and architectural comparison.
+- All 75 rule-category decisions matched fixture expectations. This does not establish clinical accuracy. Ten integrated scenarios were generated but not executed end to end.
+- Timing bars show single-run mean function latency from an in-memory fixture, excluding database, network, and API overhead. P95 values remain in speaker notes.
+- The comparison describes architectural differences, not an executed head-to-head clinical benchmark.
 - Speaker notes contain evidence context and current implementation limitations.
 - Bibliography entries retain the source report's references in condensed form.
 
@@ -56,6 +60,7 @@ No application credentials, API keys, or health records beyond the already suppl
 - `slides.js`: slide copy, layout markup, screenshots, and speaker notes.
 - `theme.css`: palette, typography, responsive layout, and print styles.
 - `main.js`: Reveal.js configuration and presentation tools.
-- `assets/`: local screenshot evidence.
+- `assets/`: local screenshot evidence and the original Presora logo.
+- Add `?transition=none` to disable both slide transitions and entrance motion. Reduced-motion preferences are also respected.
 
 Reveal.js documentation: https://revealjs.com/
