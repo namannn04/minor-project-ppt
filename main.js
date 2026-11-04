@@ -19,6 +19,8 @@ const deck = new Reveal({
 });
 await deck.initialize();
 const updateChrome = () => {
+  const current = deck.getCurrentSlide();
+  document.body.dataset.surface = current.matches('.hero') ? 'split' : current.matches('.paper, .rose, .lime-field') ? 'light' : 'dark';
   const index = deck.getIndices().h;
   document.querySelector('#current-slide').textContent = String(index + 1).padStart(2, '0');
   document.querySelector('#total-slides').textContent = String(deck.getTotalSlides()).padStart(2, '0');
